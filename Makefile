@@ -31,6 +31,7 @@ mx_unic_arr.c \
 mx_vector_min.c \
 mx_atoi.c \
 mx_dis_mass.c \
+mx_printint_error.c \
 main.c \
 
 
@@ -59,13 +60,3 @@ clean:
 	@rm -rf ./obj
 
 reinstall: uninstall all
-
-test_s:
-	@cp $(SRCS) .
-	@cp $(INCI) .
-	@clang $(CFLAGS) -c $(SRC) -I $(INC)
-	@clang $(CFLAGS) $(INCLIB) $(OBJ) -o $(NAME)
-	@mkdir -p obj
-	@mv $(OBJ) ./obj
-	
-test: test_s clean

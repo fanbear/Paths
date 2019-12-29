@@ -69,6 +69,7 @@ int *mx_f_str(int **mass, int size, int v);
 int mx_min_index(int *vector, int min, int size);
 int mx_atoi(const char *str);
 void mx_dis_mass(st_main *main, int g, int k, char **way_str);
+void mx_printint_error(int n);
 
 
 //-----------------------------------------------------------------------                                       

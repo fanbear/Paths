@@ -19,7 +19,8 @@ char *mx_replace_substr(const char *str, const char *sub, const char *replace) {
         res = mx_strjoin(res, replace);
         res = mx_strjoin(res, buff2);
     }
-    free(buff1);
-    free(buff2);
     return res;
 }
+
+    // free(buff1);
+    // free(buff2);

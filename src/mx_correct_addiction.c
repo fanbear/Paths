@@ -34,14 +34,19 @@ static void next_check(int i, char **str) {
 
 static void char_check(char **str, int i) {
 	int j = 0;
+	if(str[i][j] == '-')
+		pr_int_error(i);
 	for (;str[i][j] != '-'; j++) {
 		if (!mx_is_alpha(str[i][j]))
 			pr_int_error(i);
 	}
+	if(str[i][j + 1] == ',')
+		pr_int_error(i);
 	for (j = j + 1; str[i][j] != ','; j++) {
 		if (!mx_is_alpha(str[i][j]))
 			pr_int_error(i);
 	}
+
 	j = 0;
 }
 
@@ -55,15 +60,15 @@ static void int_check(char **str, int i) {
 	for (int j = count + 1; str[i][j]; j++) {
 		if (!mx_is_digit(&str[i][j]))
 			pr_int_error(i);
+		if (mx_atoi(&str[i][j]) > 1073741822) {
+			pr_int_error(i);
+		}
 	}
 }
 
 static void pr_int_error(int i) {
-	char number;
-
 	mx_print_str_error("error: line ");
-	number = (i + 2) + '0';
-	mx_printerror(number);
+	mx_printint_error(i + 2);
 	mx_print_str_error(" is not valid");
 	write(2, "\n", 1);   
 	exit(-1);

@@ -17,7 +17,9 @@ void mx_arg_error(int argc, char *file) {
 		exit(-1);
 	}
 	if ((n = read(desc,buf,1)) == 0) {
-		mx_print_str_error("error: file empty is empty");
+		mx_print_str_error("error: file ");
+		mx_print_str_error(file);
+		mx_print_str_error(" is empty");
 		mx_printerror('\n');
 		exit(-1);
 	}

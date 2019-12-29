@@ -6,14 +6,14 @@ static void corect_beginfile(char *s);
 
 void mx_correct_top(char *s) {
 	char *vertix = (char*)malloc(sizeof(char*));
-	int i = 0;
+	int count = 0;
 
-	while (s[i] != '\n') {
+	for (int i = 0; s[i] != '\n'; i++){
 		vertix[i] = s[i];
-		i++;
+		count++;
 	}
-	vertix[i + 1] = '\0';
-	if (mx_is_digit(vertix) == false) {
+	vertix[count] = '\0';
+	if (!mx_is_digit(vertix)) {
 		mx_print_str_error("error: line 1 is not valid");
 		mx_printerror('\n');
 		free(vertix);
@@ -45,11 +45,8 @@ static void corect_endfile(char *str) {
 }
 
 static void pr_int_error(int i) {
-	char number;
-
 	mx_print_str_error("error: line ");
-	number = (i + 2) + '0';
-	mx_printerror(number);
+	mx_printint_error(i + 2);
 	mx_print_str_error(" is not valid");
 	write(2, "\n", 1);   
 	exit(-1);

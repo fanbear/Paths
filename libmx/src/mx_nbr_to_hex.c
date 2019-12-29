@@ -3,7 +3,6 @@
 char *mx_nbr_to_hex(unsigned long nbr) {
 	char *buf = (char *) malloc(sizeof(char));
 	int i = 0;
-	char d;
 
 	for (;nbr != 0; i++) {
 		if (nbr % 16 < 10) {
@@ -16,11 +15,13 @@ char *mx_nbr_to_hex(unsigned long nbr) {
 		}
 	}
 	i -= 1;
-	for (int j = 0; j < i; j++) {
-		d = buf[j];
-		buf[j] = buf[i - j];
-		buf[i - j] = d;
-	}
+	for (int j = 0; j < i; j++)
+		mx_swap_char(&buf[i], &buf[i-j]);
 	buf[i+1] = '\0';
 	return buf;
 }
+
+// d = buf[j];
+// buf[j] = buf[i - j];
+// buf[i - j] = d;
+

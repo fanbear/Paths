@@ -14,4 +14,5 @@ int main(int argc, char *argv[]) {
 	main_st->matrix = mx_matrix_adj(main_st->o_graf, main_st->unic, g_size);
 	mx_dekstra(main_st, g_size);
 	free(main_st);
+	system("leaks -q main");
 }

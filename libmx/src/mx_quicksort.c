@@ -1,6 +1,7 @@
 #include "libmx.h"
 
 static void quick_while(char **arr, int i, int j, char *middle);
+static void con(char **arr, int i, int j, int count);
 
 int mx_quicksort(char **arr, int left, int right) {	
 	int count = 0;
@@ -12,14 +13,7 @@ int mx_quicksort(char **arr, int left, int right) {
 		return -1;
 	while (i <= j) {
 	 	quick_while(arr, i, j, middle);
-	 	if (i <= j) {
-	 		if (i <= j && (mx_strlen(arr[i]) != mx_strlen(arr[j]))) {
-	   			mx_swap_char(arr[i], arr[j]);
-	   			count++;
-	   		}
-	   		i++;
-	   		j--;
-	  	}
+	 	con(arr, i, j, count);
 	 }
 	 if (left < j)
 	 	count += mx_quicksort(arr, left, j);
@@ -33,4 +27,15 @@ static void quick_while(char **arr, int i, int j, char *middle) {
 	 	i++;
 	while (mx_strlen(arr[j]) > mx_strlen(middle))
 	 	j--;
+}
+
+static void con(char **arr, int i, int j, int count) {
+	if (i <= j) {
+	 	if (i <= j && (mx_strlen(arr[i]) != mx_strlen(arr[j]))) {
+	   		mx_swap_char(arr[i], arr[j]);
+	   		count++;
+	   	}
+	   	i++;
+	   	j--;
+	}
 }
