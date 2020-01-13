@@ -13,11 +13,9 @@ int mx_vector_min(int *str, int size, int *stf) {
 			}
 		}
 		if (flag == 0) {
-
-			if (min > str[i] && str[i] != 0) {
+			if (min >= str[i] && str[i] != 0) {
 				min = str[i];
 			}
-			
 		}
 	}
 	return min;

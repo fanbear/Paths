@@ -23,7 +23,6 @@ mx_matrix_adj.c \
 mx_min_index.c \
 mx_print_str_error.c \
 mx_printerror.c \
-mx_printway.c \
 mx_read_file.c \
 mx_smej.c \
 mx_str_to_mas.c \
@@ -33,7 +32,9 @@ mx_atoi.c \
 mx_dis_mass.c \
 mx_printint_error.c \
 main.c \
-
+mx_output.c \
+mx_destroy_null.c \
+mx_btrack.c \
 
 SRCS = $(addprefix src/, $(SRC))
 

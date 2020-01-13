@@ -31,6 +31,8 @@ static void if_two(int g, int k, st_main *main, char ** way_str) {
 		count++;
 	for (int i = 0; i < count; ++i) {
 		ind2 = ret_int_index(way_str[i], main);
+		if (main->matrix[ind][ind2] == 0)
+			break;
 		mx_printint(main->matrix[ind][ind2]);
 		mx_printstr(" + ");
 		ind = ind2;

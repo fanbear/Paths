@@ -2,7 +2,7 @@
 
 char *mx_read_file(const char *file) {
 	r_file *fst = (r_file*)malloc(sizeof(r_file*));
-	char buf[128];
+	char buf[512];
 	char *temp = NULL;
 	char *buf_str = NULL;
 

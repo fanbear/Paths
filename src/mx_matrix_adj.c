@@ -4,7 +4,7 @@ static void add_int(int **temp, int size);
 static void m_fun(char **graf, char** unic, int size, int **temp);
 
 int **mx_matrix_adj(char **graf, char **unic, int size) {
-	int** temp = (int**)malloc(1024 * sizeof(int**));
+	int** temp = (int**)malloc(1000000 * sizeof(int**));
 
 	add_int(temp, size);
 	m_fun(graf, unic, size, temp);
@@ -13,7 +13,7 @@ int **mx_matrix_adj(char **graf, char **unic, int size) {
 
 static void add_int(int **temp, int size) {
 	for (int i = 0; i < size; i++) {
-		temp[i] = (int*) malloc(40 * sizeof(int*));
+		temp[i] = (int*) malloc(40000 * sizeof(int*));
 		for (int j = 0; j < size; j++)
 			temp[i][j] = 0;
 	}

@@ -2,7 +2,7 @@
 
 char **mx_str_to_mas(char *str)
 {
-	char **buf = (char **)malloc(sizeof(char **) * 40);
+	char **buf = (char **)malloc(sizeof(char **) * 4000);
 	int f = 0;
 	int n = 0;
 	int i = 0;
@@ -11,7 +11,7 @@ char **mx_str_to_mas(char *str)
 		f++;
 	n = f + 1;
 	for (int j = 0; str[n] != '\0'; i++) {
-		buf[i] = (char *)malloc(sizeof(char *) * 120);
+		buf[i] = (char *)malloc(sizeof(char *) * 120000);
 		for (j = 0 ;str[n] != '\n'; j++, n++)
 			buf[i][j] = str[n];
 		buf[i][j] = '\0';

@@ -3,7 +3,7 @@
 static void set_size(st_main *main, char **temp);
 
 char **mx_graf_addiction(st_main *main) {
-	char **temp = (char**)malloc(sizeof(char**) * 1024);
+	char **temp = (char**)malloc(sizeof(char**) * 100000);
 	int j = 0;
 	int n = 0;
 	int c = 0; 
@@ -21,7 +21,6 @@ char **mx_graf_addiction(st_main *main) {
 			temp[n][c] = main->g_mass[i][j];
 		n++;
 	}
-	temp[n] = NULL;
 	return temp;
 }
 
@@ -33,5 +32,5 @@ static void set_size(st_main *main, char **temp) {
 		count++;
 	summ = count * 3;
 	for (int i = 0; i < summ; i++)
-		temp[i] = (char*)malloc(sizeof(char*) * 200);
+		temp[i] = (char*)malloc(sizeof(char*) * 2000000);
 }
